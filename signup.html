@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        /* Main styling based on your website's CSS */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Kumbh Sans', sans-serif;
+        }
+
+        body {
+            background-color: #fafad2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .signup-container {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            background: #ffffff;
+            border: 2px solid #90ee90;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 139, 139, 0.2);
+        }
+
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            background: linear-gradient(to top, #008b8b 0%, #131313 100%);
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .radio-group {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            color: #131313;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"], input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #90ee90;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #90ee90;
+            color: #131313;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #008b8b;
+            color: #fafad2;
+        }
+    </style>
+    <script>
+        function toggleFields() {
+            const individualFields = document.getElementById('individual-fields');
+            const organizationFields = document.getElementById('organization-fields');
+            const individualRadio = document.getElementById('individual');
+            
+            if (individualRadio.checked) {
+                individualFields.style.display = 'block';
+                organizationFields.style.display = 'none';
+            } else {
+                individualFields.style.display = 'none';
+                organizationFields.style.display = 'block';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        
+        <div class="radio-group">
+            <label><input type="radio" name="type" id="individual" onclick="toggleFields()" checked> Individual</label>
+            <label><input type="radio" name="type" id="organization" onclick="toggleFields()"> Organization</label>
+        </div>
+        
+        <form>
+            <!-- Fields for Individual -->
+            <div id="individual-fields">
+                <div class="form-group">
+                    <label for="name-individual">Name:</label>
+                    <input type="text" id="name-individual" name="name-individual" required>
+                </div>
+                <div class="form-group">
+                    <label for="occupation">Occupation:</label>
+                    <input type="text" id="occupation" name="occupation" required>
+                </div>
+                <div class="form-group">
+                    <label for="email-individual">Email ID:</label>
+                    <input type="email" id="email-individual" name="email-individual" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone-individual">Phone Number:</label>
+                    <input type="tel" id="phone-individual" name="phone-individual" required>
+                </div>
+                <div class="form-group">
+                    <label for="username-individual">Username:</label>
+                    <input type="text" id="username-individual" name="username-individual" required>
+                </div>
+                <div class="form-group">
+                    <label for="password-individual">Create Password:</label>
+                    <input type="password" id="password-individual" name="password-individual" required>
+                </div>
+            </div>
+
+            <!-- Fields for Organization -->
+            <div id="organization-fields" style="display: none;">
+                <div class="form-group">
+                    <label for="name-organization">Name:</label>
+                    <input type="text" id="name-organization" name="name-organization" required>
+                </div>
+                <div class="form-group">
+                    <label for="organization">Organization:</label>
+                    <input type="text" id="organization" name="organization" required>
+                </div>
+                <div class="form-group">
+                    <label for="email-organization">Email ID:</label>
+                    <input type="email" id="email-organization" name="email-organization" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone-organization">Phone Number:</label>
+                    <input type="tel" id="phone-organization" name="phone-organization" required>
+                </div>
+                <div class="form-group">
+                    <label for="username-organization">Username:</label>
+                    <input type="text" id="username-organization" name="username-organization" required>
+                </div>
+                <div class="form-group">
+                    <label for="password-organization">Create Password:</label>
+                    <input type="password" id="password-organization" name="password-organization" required>
+                </div>
+            </div>
+
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+</body>
+</html>
